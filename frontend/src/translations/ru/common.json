@@ -1,0 +1,13 @@
+{
+  "auth": {
+    "login": "",
+    "sign_in_to_your_account": "",
+    "password": "",
+    "forgot_password": ""
+  },
+  "actions": {
+    "process": "",
+    "confirm": "",
+    "reject": ""
+  }
+}

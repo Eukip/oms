@@ -1,0 +1,165 @@
+FORMAT: 1A
+HOST: https://0.0.0.0:8000/api/
+
+# Optima API docs
+
+## Users Collection [/users/]
+
+
+### List all users [GET]
+
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: Bearer `admin user token`
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id": <int>,
+                "username": <string>,
+                "password": <string>,
+                "first_name": <string>,
+                "last_name": <string>,
+                "email": <string>,
+                "role": <int>,
+                "branch": <int>
+            }
+        ]
+
+### Create a new user [POST]
+
+
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: Bearer `admin user token`
+        
+    + Body
+
+            {
+                "id": <int>,
+                "username": <string>,
+                "first_name": <string>,
+                "last_name": <string>,
+                "email": <string>,
+                "role": <int>,
+                "branch": <int>
+            }
+
++ Response 201 (application/json)
+
+
+    + Body
+
+            {
+                "id": <int>,
+                "username": <string>,
+                "first_name": <string>,
+                "last_name": <string>,
+                "email": <string>,
+                "role": <int>,
+                "branch": <int>
+            }
+            
+## Update user  [/users/{id}/]
+### Update user [PUT]
+
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: Bearer `admin user token`
+            
+    + Body
+
+            {
+                "id": <int>,
+                "username": <string>,
+                "password": <string>,
+                "first_name": <string>,
+                "last_name": <string>,
+                "email": <string>,
+                "role": <int>,
+                "branch": <int>
+            }
+
++ Response 201 (application/json)
+
+
+    + Body
+
+            {
+                "id": <int>,
+                "username": <string>,
+                "first_name": <string>,
+                "last_name": <string>,
+                "email": <string>,
+                "role": <int>,
+                "branch": <int>
+            }
+            
+### Get user [GET]
+
++ Request (application/json)
+
+
++ Response 201 (application/json)
+
+
+    + Body
+
+            {
+                "id": <int>,
+                "username": <string>,
+                "first_name": <string>,
+                "last_name": <string>,
+                "email": <string>,
+                "role": <int>,
+                "branch": <int>
+            }
+            
+
+## User login  [/users/login/]
+### User login [POST]
+
++ Request (application/json)
+
+            {
+                "username": <string>,
+                "password": <string>,
+            }
+
++ Response 201 (application/json)
+
+
+    + Body
+
+            {
+                "refresh": <string>,
+                "access": <string>,
+                "user": <dictionary>
+            }
+            
+## Refresh token  [/token/refresh/]
+### Refresh token [POST]
+
++ Request (application/json)
+
+            {
+                "refresh": <string>,
+            }
+
++ Response 201 (application/json)
+
+
+    + Body
+
+            {
+                "refresh": <string>,
+                "access": <string>,
+                "user": <dictionary>
+            }

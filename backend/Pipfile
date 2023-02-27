@@ -1,0 +1,28 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "*"
+djangorestframework = "*"
+channels-redis = "*"
+psycopg2-binary = "*"
+django-fsm = "*"
+channels = "*"
+asgiref = "*"
+pillow = "*"
+websocket-client = "*"
+coloredlogs = "*"
+drf-yasg = "*"
+djangorestframework-simplejwt = "*"
+pyjwt = "*"
+requests = "*"
+requests-async = "*"
+python-dotenv = "*"
+django-filter = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"

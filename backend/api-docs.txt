@@ -1,0 +1,38 @@
+API_URL = 0.0.0.0:8000/api
+URI for websocket connection:    ws://API_URL:/updates/?token=jwt_access_token
+
+
+при подключении по сокету приходит скисок всех доступных заказов.
+
+GET     {"type": "orders_list", "data": [list of objects]}
+
+или чтобы получить обновленный список заказов отправлять:
+POST    {"type": "orders_list"}
+
+для обновления статуса заказа отправлять:
+POST    {"type": "update", "data": {"id": <id of order>, "status": <status code for update>}}
+
+
+для обновления статуса заказа ['Отменить', 'Возвратить в колл-центр'] включать причину возврата, отправлять:
+POST    {"type": "update", "data": {"id": <id of order>, "status": <status code for update>}, "return_reason": <reason>}
+
+для создания нового заказа отправлять:
+POST    {"type": "create", "data": <json order object>}
+
+
+при возникновении ошибки по запросу приходит:
+    {"type": "request_fail", "detail": <request fail details>}
+
+когда появляются новые заказы или обновляются существующие приходит:
+    {"type": "create_success", "data": <created_order_object>}
+
+при возникновении ошибки при запросе на создание заказа
+    {"type": "create_fail", "data": <order object>, "detail": <request fail details>}
+
+когда заказы обновляются существующие приходит:
+    {"type": "update_success", "data": <updated order object>}
+
+при возникновении ошибки при запросе обновления заказа
+    {"type": "update_fail", "data": <order object>, "detail": <fail reason>}
+
+

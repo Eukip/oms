@@ -1,0 +1,12 @@
+*/__pychache__/*
+**/__pychache__/**
+/**/__pychache__/**/
+/*/__pychache__/*/
+backend/.idea/
+backend/draft.py
+*.pyc
+*/*.pyc
+templates/
+__pycache__/
+.idea/
+backend/.env
